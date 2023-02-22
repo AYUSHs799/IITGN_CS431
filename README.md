@@ -1,2 +1,2 @@
 # IITGN_CS431
-SC431 - Computer Network and Security.
+CS431 - Computer Network and Security.
