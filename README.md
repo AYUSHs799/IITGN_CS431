@@ -1,2 +1,5 @@
 # IITGN_CS431
-CS431 - Computer Network and Security.
+## Indian Institute of Technology - Gandhinagar
+## CS431 - Computer Network and Security.
+
+This repository contains Assignment files and some miscellaneous stuff.
