@@ -1,0 +1,18 @@
+## Place your answers here.
+
+Q1>
+    Vulnerability that we exploit arises due to a Seg Fault error. This Seg Fault cause the the process to exit the server.
+    The source of the error is the buffer overflow in the reqpath (buffer/variable) from function process_client present in the file zookd.c.
+
+Q2>
+    This buffer has a length of 4096, and any string exceeding this length will result in an error.
+
+For the Executable Stack:
+    Q3> The buffer that is exploited is located in http_request_headers and is called value. This buffer stores the headers path as environment variables. 
+        The attacker can overflow this buffer with their desired shellcode, causing it to be executed.
+
+For the Non-Executable Stack:
+    Q4> and Q5> To carry out a return-to-libc attack, the attacker must delete a file. The direct address of the unlink function is located, which takes a string input of (const char *). 
+            There are two steps involved in this process:
+                a. Returning a function to unlink.
+                b. Using the accidentally function to pass the string to unlink.
