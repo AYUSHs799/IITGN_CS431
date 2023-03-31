@@ -2,4 +2,4 @@
 ## Indian Institute of Technology - Gandhinagar
 ## CS431 - Computer Network and Security.
 
-This repository contains Assignment files and some miscellaneous stuff.
+This repository contains Assignment files and some miscellaneous stuff for the course CS431 - Computer Network and Security.
