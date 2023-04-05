@@ -37,13 +37,13 @@ The desired access control policies are as follows:
 
 ## <li>Making Directory structure of ACP.
 ```ps
-    mkdir ACP   # Making the root directory
-    cd ACP
-    mkdir assignments   
-    cd assignments/
-    mkdir 'handouts'
-    mkdir 'submissions'
-    mkdir 'grade reports'
+    mkdir ACP                                       # Making the root directory
+    cd ACP                                          # Navigating to the root directory
+    mkdir assignments                               # Making the assignments directory
+    cd assignments/                                 # Navigating to the assignments directory
+    mkdir 'handouts'                                # Making the handouts directory
+    mkdir 'submissions'                             # Making the submissions directory
+    mkdir 'grade reports'                           # Making the grade reports directory
     mkdir submissions/st1 submissions/st2           # Creating directories for students submissions
     mkdir grade\ reports/st1 grade\ reports/st2     # Creating directories for students grade reports
 ```
