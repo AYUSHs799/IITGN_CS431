@@ -146,4 +146,4 @@ any grade reports. A student is allowed to read his or her own grade report but 
 * https://www.tecmint.com/secure-files-using-acls-in-linux/ 
 * https://www.ibm.com/docs/en/zos/2.3.0?topic=scd-setfacl-set-remove-change-access-control-lists-acls
 *  https://www.geeksforgeeks.org/access-control-listsacl-linux/
-*  https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/system_administrators_guide/ch-access_control_lis
+*  https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/system_administrators_guide/ch-access_control_lists
