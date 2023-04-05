@@ -147,3 +147,5 @@ any grade reports. A student is allowed to read his or her own grade report but 
 * https://www.ibm.com/docs/en/zos/2.3.0?topic=scd-setfacl-set-remove-change-access-control-lists-acls
 *  https://www.geeksforgeeks.org/access-control-listsacl-linux/
 *  https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/system_administrators_guide/ch-access_control_lists
+
+## You can also refer to [writeup.pdf](https://github.com/AYUSHs799/IITGN_CS431/blob/main/Assignment_5%20Access_Control_Policies/22210010_Assignment_5_Writeup.pdf) if any doubts.
