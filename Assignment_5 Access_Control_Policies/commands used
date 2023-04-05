@@ -1,0 +1,139 @@
+
+# Initial commands
+mkdir shared_folder
+docker run --name acp -d -t \
+	-v "$(pwd)"/shared_folder:/shared_folder \
+	ubuntu:20.04
+
+
+# Starting and login to the container.
+docker start acp
+sudo docker exec -it acp bash
+
+# Install acl package
+apt-get update
+apt-get install acl
+
+# Making Directory structure.
+mkdir ACP
+cd ACP
+mkdir assignments
+cd assignments/
+mkdir 'handouts'
+mkdir 'submissions'
+mkdir 'grade reports'
+mkdir submissions/st1 submissions/st2
+mkdir grade\ reports/st1 grade\ reports/st2
+
+# viewing directory structure using tree command.
+tree assignments/
+$Paste screenshot here$
+
+# Creating groups.
+groupadd -g 20001 instructors
+groupadd -g 21001 tas        
+groupadd -g 22001 students
+
+# Creating Users.
+useradd -g instructors -u 10001 alice
+useradd -g tas -u 11001 bob
+useradd -g tas -u 11002 charlie
+useradd -g students -u 12001 st1
+useradd -g students -u 12002 st2
+
+# Confirming the users being made.
+cut -d: -f1 /etc/passwd
+
+# Setting permissions for assignments directory
+setfacl -m g:instructors:rx /ACP/assignments/ 
+setfacl -m g:tas:rx /ACP/assignments/ 
+setfacl -m g:students:rx /ACP/assignments/ 
+
+## this will ensure anyone else is not able to access the directory.
+setfacl -m o::r /ACP/assignments/
+
+
+# Setting the permissions to handouts directory
+setfacl -m g:instructors:rwx /ACP/assignments/handouts
+setfacl -m g:tas:rwx /ACP/assignments/handouts
+setfacl -m g:students:rx /ACP/assignments/handouts
+setfacl -m o::r /ACP/assignments/handouts
+
+# Setting the permissions to submissions directory
+setfacl -m g:instructors:rx /ACP/assignments/submissions 
+setfacl -m g:tas:rx /ACP/assignments/submissions
+setfacl -m g:students:rx /ACP/assignments/submissions
+setfacl -m o::r /ACP/assignments/submissions
+
+setfacl -m u:st1:rwx /ACP/assignments/submissions/st1
+setfacl -m u:st1:--- /ACP/assignments/submissions/st2
+
+setfacl -m u:st2:--- /ACP/assignments/submissions/st1
+setfacl -m u:st2/rwx /ACP/assignments/submissions/st2
+
+# Setting the permissions to grade reports directory
+setfacl	-m g:instructors:rwx	/ACP/assignments/grade\ reports
+setfacl -m g:tas:rx		/ACP/assignments/grade\ reports
+setfacl -m g:students:rx	/ACP/assignments/grade\ reports
+setfacl -m o::r /ACP/assignments/grade\ reports
+
+setfacl	-m g:instructors:rwx	/ACP/assignments/grade\ reports/st1
+setfacl	-m g:instructors:rwx	/ACP/assignments/grade\ reports/st2
+
+setfacl -m u:st1:rx 	/ACP/assignments/grade\ reports/st1
+setfacl -m u:st2:--- 	/ACP/assignments/grade\ reports/st1
+
+setfacl -m u:st1:--- 	/ACP/assignments/grade\ reports/st2
+setfacl -m u:st2:rx 	/ACP/assignments/grade\ reports/st2
+
+
+
+#Testing...
+
+
+## Write permissions
+
+mkdir test
+
+touch handouts/test.txt
+touch submissions/test.txt
+touch grade\ reports/test.txt
+
+touch submissions/st1/sub1.txt
+touch submissions/st2/sub2.txt
+
+touch grade\ reports/st1/grade1.txt
+touch grade\ reports/st2/grade2.txt
+
+## Read permissions
+
+cat handouts/test.txt
+cat submissions/test.txt
+cat grade\ reports/test.txt
+
+cat submissions/st1/sub1.txt
+cat submissions/st2/sub2.txt
+
+cat grade\ reports/st1/grade1.txt
+cat grade\ reports/st2/grade2.txt
+
+
+##removing files
+
+rmdir  test
+
+rm handouts/test.txt
+rm submissions/test.txt
+rm grade\ reports/test.txt
+
+
+rm submissions/st1/sub1.txt
+rm submissions/st2/sub2.txt
+
+rm grade\ reports/st1/grade1.txt
+rm grade\ reports/st2/grade2.txt
+
+
+
+
+
