@@ -1,5 +1,5 @@
-# <p style="text-align: center;">INSTRUCTIONS</p>
-## <p style="text-align: center;">Please read the instructions properly before starting the assignment! </p>
+# <p style="text-align: center;"> INSTRUCTIONS </p>
+## <p style="text-align: center;"> Please read the instructions properly before starting the assignment! </p>
 
 1. Submit to Canvas a PDF file containing your explanations and your code files before the due date. Late submissions incur penalties as described in the first lecture (first you use up grace hours, then you lose points). Note that only PDF submissions will be graded.
 
