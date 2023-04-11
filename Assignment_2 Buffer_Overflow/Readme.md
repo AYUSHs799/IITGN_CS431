@@ -3,7 +3,7 @@ A slew of “binary bombs” have been planted on my server. A binary bomb is a 
 There are too many bombs for us to deal with, so we are giving each student a bomb to defuse. Your mission, which you have no choice but to accept, is to defuse your bomb before the due date. Good luck, and welcome to the bomb squad!
 
 # 2. Get Your Bomb
-You can obtain your bomb by pointing your Web browser at: http://hamilton.iitgn.ac.in:12345/Links to an external site. 
+You can obtain your bomb by pointing your Web browser at: http://hamilton.iitgn.ac.in:12345 to an external site. 
 This will display a binary bomb request form for you to fill in. Enter your user name (do not add spaces in your name as there seems to be a bug there; thanks to Harshit) and email address and hit the Submit button. The server will build your bomb and return it to your browser in a tar file called ``` bomb<k>.tar```, where k is the unique number of your bomb. Save the ``` bomb<k>.tar``` file to a (protected) directory in which you plan to do your work. Then give the command: ```tar -xvf bomb<k>.tar```. This will create a directory called ```./bomb<k>``` with the following files:  
 * README: Identifies the bomb and its owners.
 * bomb: The executable binary bomb.
