@@ -1,5 +1,5 @@
 # 1. Introduction
-In this assignment, we will explore buffer overflow vulnerabilities, in the context of a web server called zookws. The zookws web server runs a simple python web application, zoobar, with which users transfer credits between each other. You will find buffer overflows in the zookws web server code, write exploits for the buffer overflows to inject code into the server over the network, and figure out how to bypass non-executable stack protection. 
+In this assignment, we will explore buffer overflow vulnerabilities, in the context of a web server called ```zookws```. The zookws web server runs a simple python web application, zoobar, with which users transfer credits between each other. You will find buffer overflows in the zookws web server code, write exploits for the buffer overflows to inject code into the server over the network, and figure out how to bypass non-executable stack protection. 
 
 You may need to familiarize yourself with certain aspects of the C language, x86 assembly language, gdb, etc. as part of this assignment. Detailed familiarity with many different pieces of infrastructure is needed to understand attacks and defenses in realistic situations: security weaknesses often show up in corner cases, and so you need to understand the details to craft exploits and design defenses for those corner cases.  These two factors (new infrastructure and details) can make the labs time consuming. You should start immediately and work on them daily for some limited time, instead of trying to do all exercises in a single shot just before the deadline. Take the time to understand the relevant details.
 
@@ -20,10 +20,10 @@ Before starting the VM, make sure that you can ```ssh``` into the machine from o
 </ul></ul>
 
 ## <li> a. With KVM
-To start the VM with KVM, run ./cs431.sh Download cs431.shfrom a terminal (Ctrl+A x to force quit). If you get a permission denied error from this script, try adding yourself to the kvm group with sudo gpasswd -a `whoami` kvm, then log out and log back in.
+To start the VM with KVM, run ```./cs431.sh``` Download cs431.shfrom a terminal (Ctrl+A x to force quit). If you get a permission denied error from this script, try adding yourself to the kvm group with sudo gpasswd -a `whoami` kvm, then log out and log back in.
 
 ## <li> b. With ARM processors
-If you are using a computer with a non-x86 processor (e.g., Mac laptops with the ARM M1 processor), you can run the virtual machine using qemu. To do this, first install [Homebrew](https://brew.sh/) to an external site., then install qemu by running brew install [qemu](https://formulae.brew.sh/formula/qemu) to an external site., and finally edit the cs431.sh Download cs431.shshell script, and remove the ```-enable-kvm flag```. At this point, you should be able to start the course VM by running ./cs431.sh Download cs431.sh as above.
+If you are using a computer with a non-x86 processor (e.g., Mac laptops with the ARM M1 processor), you can run the virtual machine using qemu. To do this, first install [Homebrew](https://brew.sh/) to an external site., then install qemu by running brew install [qemu](https://formulae.brew.sh/formula/qemu) to an external site., and finally edit the cs431.sh Download cs431.shshell script, and remove the ```-enable-kvm flag```. At this point, you should be able to start the course VM by running ```./cs431.sh``` . Download cs431.sh as above.
 
 # 3. Getting Started
 You will use the student account in the VM for your work. The password for the student account is cs431. 
@@ -71,7 +71,7 @@ The ```./clean-env.sh``` commands starts zookd on port 8080. To open the zoobar 
 
 If something doesn't seem to be working, try to figure out what went wrong, or contact us, before proceeding further. You can always ssh into the machine using the IP address obtained from the machine to open more terminals: ```ssh -p 22 student@<IPADDRESS>```
 
-The IPADDRESS may be 127.0.0.1 if using NAT adapter with VirtualBox. 
+The IPADDRESS may be ```127.0.0.1``` if using NAT adapter with VirtualBox. 
 
 # 4. Problems
 Part 1: Finding buffer overflows (2 points)
@@ -225,7 +225,7 @@ Verify that your exploit works; you will need to re-create /home/student/grades.
 * First focus on obtaining control of the program counter.
 * Sketch out the stack layout that you expect the program to have at the point when you overflow the buffer, and use gdb to verify that your overflow data ends up where you expect it to.
 * Step through the execution of the function to the return instruction to make sure you can control what address the program returns to.
-* The ```next```, ```stepi``, and [x](https://visualgdb.com/gdbreference/commands/x) commands in gdb should prove helpful.
+* The ```next```, ```stepi```, and [x](https://visualgdb.com/gdbreference/commands/x) commands in gdb should prove helpful.
 
 Once you can reliably hijack the control flow of the program, find a suitable address that will contain the code you want to execute, and focus on placing the correct code at that address---e.g. a derivative of the provided shell code.
 
