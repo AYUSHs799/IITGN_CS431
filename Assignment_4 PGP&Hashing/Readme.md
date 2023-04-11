@@ -90,7 +90,7 @@ Solve the Hash Extension problem on the CTF server.
 Start with the file ```pure_python_sha256.py``` which is a simple Python 3 implementation of SHA256 which you can modify in order to implement the extension attack. This problem does NOT require any brute force, it can be solved just by connecting to the server twice (once to get the original cookie and its hash, and the second time to submit your modified cookie and re-calculated hash).
 
 --- 
-## Information on SHA256: 
+### Information on SHA256: 
 
 
 <b>SHA256 Pseudocode:</b> The ”Pseudocode” section of https://en.wikipedia.org/wiki/SHA-2#Pseudocode is a good reference for the SHA256 algorithm.
